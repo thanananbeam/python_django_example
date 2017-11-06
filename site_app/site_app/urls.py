@@ -29,6 +29,10 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),   
 ]
 
+
+
+
+
 urlpatterns += i18n_patterns(
     url(r'^', include('register.urls'))
 )
