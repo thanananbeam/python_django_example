@@ -15,6 +15,21 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+#import module
+from register.views import *
+
+#language
+from django.conf.urls.i18n import i18n_patterns
+
 urlpatterns = [
+    url(r'^', include('register.urls')),
+    url(r'^login', LoginView.as_view(), name='frontend_home'),
+    url(r'^login', LoginView.as_view()),
+    url(r'^auth_logout', 'register.views.logout'),
     url(r'^admin/', include(admin.site.urls)),
+    
 ]
+
+urlpatterns += i18n_patterns(
+    url(r'^', include('register.urls'))
+)
