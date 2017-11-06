@@ -26,8 +26,7 @@ urlpatterns = [
     url(r'^login', LoginView.as_view(), name='frontend_home'),
     url(r'^login', LoginView.as_view()),
     url(r'^auth_logout', 'register.views.logout'),
-    url(r'^admin/', include(admin.site.urls)),
-    
+    url(r'^admin/', include(admin.site.urls)),   
 ]
 
 urlpatterns += i18n_patterns(
